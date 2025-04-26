@@ -1,1 +1,16 @@
-<p>coffee-list works!</p>
+<div id="coffee-table-section">
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Región</th>
+    </tr>
+    <tr *ngFor="let coffee of coffeeList">
+      <td>{{coffee.id}}</td>
+      <td>{{coffee.nombre}}</td>
+      <td>{{coffee.tipo}}</td>
+      <td>{{coffee.region}}</td>
+    </tr>
+  </table>
+</div>

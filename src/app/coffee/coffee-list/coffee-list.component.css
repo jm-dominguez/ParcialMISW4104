@@ -1,0 +1,11 @@
+table {
+  overflow-x: scroll;
+}
+
+th {
+  padding: 2px 10px;
+}
+
+td {
+  padding: 5px 10px;
+}
