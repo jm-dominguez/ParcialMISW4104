@@ -38,10 +38,10 @@ export class CoffeeListComponent implements OnInit {
           numberOfOrigin ++;
         }
         coffeeArray.push(coffee);
-        this.numberOfBlend = numberOfBlend;
-        this.numberOfOrigin = numberOfOrigin;
       }
       this.coffeeList = coffeeArray;
+      this.numberOfBlend = numberOfBlend;
+      this.numberOfOrigin = numberOfOrigin;
     })
   }
 }
