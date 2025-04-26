@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { Coffee } from '../models/coffee';
-import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

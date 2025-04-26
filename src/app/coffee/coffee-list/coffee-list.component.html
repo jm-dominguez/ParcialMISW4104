@@ -1,4 +1,4 @@
-<div id="coffee-table-section">
+<div id="coffee-table-section" *ngIf="coffeeList.length > 0">
   <table>
     <tr>
       <th>#</th>
@@ -13,4 +13,9 @@
       <td>{{coffee.region}}</td>
     </tr>
   </table>
+
+  <div>
+    <span>Total café de origen: {{numberOfOrigin}}</span><br>
+    <span>Total café blend: {{numberOfBlend}}</span>
+  </div>
 </div>

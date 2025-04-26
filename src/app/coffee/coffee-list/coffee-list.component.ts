@@ -11,19 +11,35 @@ import { CommonModule } from '@angular/common';
 })
 export class CoffeeListComponent implements OnInit {
 
+  static readonly blend = 'Blend';
+  static readonly origin = 'Café de Origen';
+
   coffeeService: CoffeeService = inject(CoffeeService);
   coffeeList: Array<Coffee>;
+  numberOfBlend: number;
+  numberOfOrigin: number;
 
   constructor() {
     this.coffeeList = [];
+    this.numberOfBlend = 0;
+    this.numberOfOrigin = 0;
   }
 
   ngOnInit(): void {
     this.coffeeService.getCoffees().subscribe((response:Array<any>) => {
       let coffeeArray:Array<Coffee> = []
+      let numberOfBlend = 0;
+      let numberOfOrigin = 0;
       for (const element of response) {
         const coffee = new Coffee(element.id, element.nombre, element.tipo, element.region, element.sabor, element.altura, element.imagen);
+        if (coffee.tipo === CoffeeListComponent.blend) {
+          numberOfBlend ++;
+        } else if (coffee.tipo === CoffeeListComponent.origin) {
+          numberOfOrigin ++;
+        }
         coffeeArray.push(coffee);
+        this.numberOfBlend = numberOfBlend;
+        this.numberOfOrigin = numberOfOrigin;
       }
       this.coffeeList = coffeeArray;
     })
